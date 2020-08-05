@@ -10,7 +10,10 @@ export async function up(knex: Knex): Promise<void> {
 			.inTable("users")
 			.onDelete("CASCADE")
 			.onUpdate("CASCADE");
-		table.timestamp("created_at").defaultTo("now()");
+		table
+			.timestamp("created_at")
+			.defaultTo(knex.raw("CURRENT_TIMESTAMP"))
+			.notNullable();
 	});
 }
 
