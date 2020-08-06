@@ -11,7 +11,7 @@ import {
 import { StatusBar } from "expo-status-bar";
 import React from "react";
 
-import Landing from "./src/screens/Landing";
+import AppStack from "./src/routes/AppStack";
 
 export default function App() {
 	let [fontsLoaded] = useFonts({
@@ -27,7 +27,7 @@ export default function App() {
 
 	return (
 		<>
-			<Landing />
+			<AppStack />
 			<StatusBar style="light" />
 		</>
 	);
