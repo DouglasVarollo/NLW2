@@ -4,6 +4,8 @@
 
 - <a href="#Sobre-o-projeto">Sobre o projeto</a>
 - <a href="#Funcionalidades">Funcionalidades</a>
+  - <a href="#Professor">Professor</a>
+  - <a href="#Aluno">Aluno</a>
 - <a href="#Tecnologias">Tecnologias</a>
 - <a href="#Como-executar-o-projeto">Como executar o projeto</a>
   - <a href="#Server">Server</a>
@@ -69,6 +71,16 @@ Para executar o server siga as instruções
   npm install
   ```
 
+- Antes de iniciar a aplicação você precisa rodar as migrations
+
+  ```bash
+  # com yarn
+  yarn knex:migrate
+  
+  # com npm
+  npm run knex:migrate
+  ```
+  
 - Inicie a aplicação
 
   ```bash
