@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { Image, View, Text } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { BorderlessButton } from "react-native-gesture-handler";
@@ -8,11 +8,12 @@ import logoImg from "../../assets/images/logo.png";
 import styles from "./styles";
 
 interface ScreenHeaderProps {
+	headerRight?: ReactNode;
 	title: string;
 }
 
 const ScreenHeader: React.FC<ScreenHeaderProps> = (props) => {
-	const { title } = props;
+	const { children, headerRight, title } = props;
 
 	const { navigate } = useNavigation();
 
@@ -30,7 +31,12 @@ const ScreenHeader: React.FC<ScreenHeaderProps> = (props) => {
 				<Image source={logoImg} />
 			</View>
 
-			<Text style={styles.title}>{title}</Text>
+			<View style={styles.header}>
+				<Text style={styles.title}>{title}</Text>
+				{headerRight}
+			</View>
+
+			{children}
 		</View>
 	);
 };

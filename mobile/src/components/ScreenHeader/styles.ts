@@ -18,4 +18,9 @@ export default StyleSheet.create({
 		fontSize: 24,
 		lineHeight: 32,
 	},
+	header: {
+		flexDirection: "row",
+		justifyContent: "space-between",
+		alignItems: "center",
+	},
 });
