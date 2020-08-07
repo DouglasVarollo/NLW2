@@ -146,6 +146,17 @@ Para executar a aplicação mobile siga as instruções
   npm install
   ```
 
+- Antes de iniciar a aplicação você precisa fazer uma alteração no arquivo **services/api.ts**
+
+  ```typescript
+  // NLW2/mobile/src/services/api.ts
+  
+  const api = axios.create({
+  	baseURL: "http://192.168.1.108:3333",
+  	// troque o IP 192.168.1.108 pelo o IP do seu computador
+  });
+  ```
+
 - Inicie a aplicação
 
   ```bash
