@@ -2,6 +2,7 @@ import bcrypt from "bcryptjs";
 import { Request, Response } from "express";
 
 import db from "../database/connection";
+import generateToken from "../utils/generateToken";
 
 export default class UsersController {
   async create(request: Request, response: Response) {
@@ -28,8 +29,13 @@ export default class UsersController {
       .select("id", "first_name", "last_name", "email", "avatar_url")
       .where("id", "=", user_id);
 
+    const token = generateToken({
+      id: user_id,
+    });
+
     return response.status(201).json({
       user: insertedUser,
+      token,
     });
   }
 }
